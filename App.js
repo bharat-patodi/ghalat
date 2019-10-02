@@ -15,6 +15,8 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack' // first install the stack
 import Header from './src/components/Header';
 
 const App: () => React$Node = () => {
