@@ -18,38 +18,27 @@ import {
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import Header from './src/components/Header';
+import allStyles from './src/styles/styles';
 
 // Home Screen
 
 class HomeScreen extends React.Component {
   render() {
     return (
-      <ScrollView>
+      <ScrollView style = {[allStyles.HomeScreen]}>
         <StatusBar barStyle = "dark-content"/>
-        <Header />
         <View>
-          <Text>This is the start.</Text>
-          <Text>Screen 01: Splash screen</Text>
-          <Text>Screen 02: Home screen</Text>
-          <Button title= "Go to Home" onPress = {
-            () => this.props.navigation.navigate('Home')
-          } />
-          <Text>Screen 03: Game screen</Text>
-          <Button title= "Go to Game" onPress = {
+          <Text>This is the Home screen</Text>
+          <Button style = {allStyles.Button} title= "Go to Game" onPress = {
             () => this.props.navigation.navigate('Game')
           } />
-          <Text>Screen 03-01: Question Screen</Text>
+          <Text>This button leads to questions.</Text>
           <Button title= "Go to Question" onPress = {
             () => this.props.navigation.navigate('Question')
           } />
-          <Text>Screen 03-02: Final Results screen</Text>
+          <Text>This button leads to Results.</Text>
           <Button title= "Go to Results" onPress = {
             () => this.props.navigation.navigate('Results')
-          } />
-          <Text>Screen 04: My steps screen</Text>
-          <Text>This is the end.</Text>
-          <Button title= "Go to the end" onPress = {
-            () => this.props.navigation.navigate('End')
           } />
         </View>
       </ScrollView>
@@ -62,7 +51,7 @@ class HomeScreen extends React.Component {
 class GameScreen extends React.Component {
   render () {
     return (
-      <View>
+      <View style = {[allStyles.MainContainer, allStyles.GameScreen]}>
         <Text>This is where we show the Game.</Text>
       </View>
     )
@@ -74,7 +63,7 @@ class GameScreen extends React.Component {
 class QuestionScreen extends React.Component {
   render () {
     return (
-      <View>
+      <View style = {[allStyles.QuestionScreen, allStyles.MainContainer]}>
         <Text>This is where we show the Questions.</Text>
       </View>
     )
@@ -86,26 +75,12 @@ class QuestionScreen extends React.Component {
 class ResultsScreen extends React.Component {
   render() {
     return(
-      <View>
+      <View style = {[allStyles.MainContainer, allStyles.ResultsScreen]}>
         <Text>Results are in.</Text>
       </View>
     )
   }
 }
-
-// End Screen
-
-class EndScreen extends React.Component {
-  render () {
-    return (
-      <View>
-        <Text>Sab Khatm.</Text>
-      </View>
-    )
-  }
-}
-
-
 
 // Navigation
 const MyAppNavigator = createStackNavigator({
@@ -120,11 +95,7 @@ const MyAppNavigator = createStackNavigator({
   },
   Results: {
     screen: ResultsScreen,
-  },
-  End: {
-    screen: EndScreen,
   }
-
 },
 {
   initialRouteName: 'Home',
@@ -136,14 +107,18 @@ const MyAppContainer = createAppContainer(MyAppNavigator);
 
 export default class App extends React.Component {
   render () {
-  return (
-    <>
-      <MyAppContainer />
-    </>
-  );}
+    return (
+      <>
+        <MyAppContainer />
+      </>
+    );
+  }
 };
 
-
-const styles = StyleSheet.create({
-
-});
+/*
+  (a) the layout looks like this:
+    >> Splash screen
+    >> Home screen with start game button and directions (w/without tabs)
+    >> Question Screen which shows a single question with multiple choices and leads to more questions
+    >> In the end, the results screen with the score is shown.
+*/
