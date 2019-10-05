@@ -8,12 +8,11 @@
 
 import React from 'react';
 import {
-  StyleSheet,
   ScrollView,
   View,
   Text,
   Button,
-  StatusBar
+  StatusBar,
 } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
@@ -25,11 +24,11 @@ import allStyles from './src/styles/styles';
 class HomeScreen extends React.Component {
   render() {
     return (
-      <ScrollView style = {[allStyles.HomeScreen]}>
-        <StatusBar barStyle = "dark-content"/>
+      <ScrollView style={[allStyles.HomeScreen]}>
+        <StatusBar barStyle="dark-content"/>
         <View>
           <Text>This is the Home screen</Text>
-          <Button style = {allStyles.Button} title= "Go to Game" onPress = {
+          <Button style={allStyles.Button} title="Go to Game" onPress={
             () => this.props.navigation.navigate('Game')
           } />
           <Text>This button leads to questions.</Text>
