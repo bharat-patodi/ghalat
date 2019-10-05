@@ -17,6 +17,9 @@ import {
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import Header from './src/components/Header';
+import GameScreen from './src/screens/GameScreen';
+import ResultsScreen from './src/screens/ResultsScreen';
+import QuestionScreen from './src/screens/QuestionScreen';
 import allStyles from './src/styles/styles';
 
 // Home Screen
@@ -28,7 +31,7 @@ class HomeScreen extends React.Component {
         <StatusBar barStyle="dark-content"/>
         <View>
           <Text>This is the Home screen</Text>
-          <Button style={allStyles.Button} title="Go to Game" onPress={
+          <Button style={allStyles.ButtonStyle} title="Go to Game" onPress={
             () => this.props.navigation.navigate('Game')
           } />
           <Text>This button leads to questions.</Text>
@@ -47,39 +50,39 @@ class HomeScreen extends React.Component {
 
 // Game Screen
 
-class GameScreen extends React.Component {
-  render () {
-    return (
-      <View style = {[allStyles.MainContainer, allStyles.GameScreen]}>
-        <Text>This is where we show the Game.</Text>
-      </View>
-    )
-  }
-}
+// class GameScreen extends React.Component {
+//   render () {
+//     return (
+//       <View style = {[allStyles.MainContainer, allStyles.GameScreen]}>
+//         <Text>This is where we show the Game.</Text>
+//       </View>
+//     )
+//   }
+// }
 
 // Question Screen
 
-class QuestionScreen extends React.Component {
-  render () {
-    return (
-      <View style = {[allStyles.QuestionScreen, allStyles.MainContainer]}>
-        <Text>This is where we show the Questions.</Text>
-      </View>
-    )
-  }
-}
+// class QuestionScreen extends React.Component {
+//   render () {
+//     return (
+//       <View style = {[allStyles.QuestionScreen, allStyles.MainContainer]}>
+//         <Text>This is where we show the Questions.</Text>
+//       </View>
+//     )
+//   }
+// }
 
-// Results Screen
+// // Results Screen
 
-class ResultsScreen extends React.Component {
-  render() {
-    return(
-      <View style = {[allStyles.MainContainer, allStyles.ResultsScreen]}>
-        <Text>Results are in.</Text>
-      </View>
-    )
-  }
-}
+// class ResultsScreen extends React.Component {
+//   render() {
+//     return(
+//       <View style = {[allStyles.MainContainer, allStyles.ResultsScreen]}>
+//         <Text>Results are in.</Text>
+//       </View>
+//     )
+//   }
+// }
 
 // Navigation
 const MyAppNavigator = createStackNavigator({

@@ -24,9 +24,13 @@ const allStyles = StyleSheet.create({
         fontSize: 200
     },
 // The button properties are not propagating
-    Button: {
+    ButtonStyle: {
         marginTop: 20,
         color: "#ecf0f1"
+    },
+
+    Option: {
+        padding: 10,
     }
 
 });
