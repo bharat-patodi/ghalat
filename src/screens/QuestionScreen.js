@@ -12,7 +12,7 @@ class QuestionScreen extends React.Component {
     render () {
         return (
             <View style = {[allStyles.HomeScreen, allStyles.MainContainer]}>
-                <Question />
+                <Question questionNumber = "Question #01" />
                 <Option />
                 <Option />
                 <Option />

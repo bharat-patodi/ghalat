@@ -10,7 +10,7 @@ export default class Question extends React.Component {
     render () {
         return (
             <View style = {allStyles.Option}>
-                <TouchableOpacity onPress = {correctAnswer()}><Text>Cheetah</Text></TouchableOpacity>
+                <TouchableOpacity><Text>Cheetah</Text></TouchableOpacity>
             </View>
         )
     }

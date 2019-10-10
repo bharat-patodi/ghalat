@@ -9,7 +9,7 @@ export default class Question extends React.Component {
     render () {
         return (
             <View>
-                <Text>Question #01</Text>
+                <Text props = {}>Question #01</Text>
                 <Text>Which of the following is an animal?</Text>
             </View>
         )
