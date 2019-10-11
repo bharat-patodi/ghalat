@@ -27,62 +27,26 @@ import allStyles from './src/styles/styles';
 class HomeScreen extends React.Component {
   render() {
     return (
-      <ScrollView style={[allStyles.HomeScreen]}>
-        <StatusBar barStyle="dark-content"/>
-        <View>
-          <Text>This is the Home screen</Text>
-          <Button style={allStyles.ButtonStyle} title="Go to Game" onPress={
-            () => this.props.navigation.navigate('Game')
-          } />
-          <Text>This button leads to questions.</Text>
-          <Button title= "Go to Question" onPress = {
-            () => this.props.navigation.navigate('Question')
-          } />
-          <Text>This button leads to Results.</Text>
-          <Button title= "Go to Results" onPress = {
-            () => this.props.navigation.navigate('Results')
-          } />
-        </View>
-      </ScrollView>
+      <View style={[allStyles.HomeScreen]}>
+          <StatusBar barStyle="dark-content"/>
+          <View>
+            <Text style = {{fontSize: 20}}>Welcome to the mind-bending game of Ghalat where the wrong answer is the right one. It is refreshing for the mind to try activities like these and I encourage everyone to play it for a while.</Text>
+            <Button style={allStyles.ButtonStyle} title="Go to Game" onPress={
+              () => this.props.navigation.navigate('Game')
+            } />
+            <Text>This button leads to questions.</Text>
+            <Button title= "Go to Question" onPress = {
+              () => this.props.navigation.navigate('Question')
+            } />
+            <Text>This button leads to Results.</Text>
+            <Button style = {allStyles.ButtonStyle} title= "Go to Results" onPress = {
+              () => this.props.navigation.navigate('Results')
+            } />
+          </View>
+      </View>
     );
   }
 }
-
-// Game Screen
-
-// class GameScreen extends React.Component {
-//   render () {
-//     return (
-//       <View style = {[allStyles.MainContainer, allStyles.GameScreen]}>
-//         <Text>This is where we show the Game.</Text>
-//       </View>
-//     )
-//   }
-// }
-
-// Question Screen
-
-// class QuestionScreen extends React.Component {
-//   render () {
-//     return (
-//       <View style = {[allStyles.QuestionScreen, allStyles.MainContainer]}>
-//         <Text>This is where we show the Questions.</Text>
-//       </View>
-//     )
-//   }
-// }
-
-// // Results Screen
-
-// class ResultsScreen extends React.Component {
-//   render() {
-//     return(
-//       <View style = {[allStyles.MainContainer, allStyles.ResultsScreen]}>
-//         <Text>Results are in.</Text>
-//       </View>
-//     )
-//   }
-// }
 
 // Navigation
 const MyAppNavigator = createStackNavigator({

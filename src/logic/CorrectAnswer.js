@@ -1,5 +1,5 @@
 correctAnswer = () => {
-    alert("Hi");
+    alert("Correct");
 }
 
 export default correctAnswer;

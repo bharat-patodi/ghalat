@@ -8,9 +8,9 @@ import allStyles from '../styles/styles';
 export default class Question extends React.Component {
     render () {
         return (
-            <View>
-                <Text props = {}>Question #01</Text>
-                <Text>Which of the following is an animal?</Text>
+            <View style = {allStyles.Question}>
+                <Text>{this.props.questionNumber}</Text>
+                <Text>{this.props.questionText}</Text>
             </View>
         )
     }

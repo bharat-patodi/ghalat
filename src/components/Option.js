@@ -2,16 +2,13 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import allStyles from '../styles/styles';
-import correctAnswer from '../logic/CorrectAnswer';
 
 // Create and export component
 
-export default class Question extends React.Component {
+export default class Option extends React.Component {
     render () {
         return (
-            <View style = {allStyles.Option}>
-                <TouchableOpacity><Text>Cheetah</Text></TouchableOpacity>
-            </View>
+                <TouchableOpacity style={allStyles.Option} onPress = {this.props.answerType}><Text>{this.props.optionText}</Text></TouchableOpacity>
         )
     }
 }
