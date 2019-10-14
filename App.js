@@ -95,4 +95,6 @@ export default class App extends React.Component {
     >> Home screen with start game button and directions (w/without tabs)
     >> Question Screen which shows a single question with multiple choices and leads to more questions
     >> In the end, the results screen with the score is shown.
+  (b) Create a single question screen and a basic layout >> Add another question and change the layout accordingly.
+  (c) Create a React app for this too.
 */
