@@ -15,7 +15,6 @@ import {
 } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
-import GameScreen from './src/screens/GameScreen';
 import ResultsScreen from './src/screens/ResultsScreen';
 import QuestionScreen from './src/screens/QuestionScreen';
 import allStyles from './src/styles/styles';
@@ -30,25 +29,9 @@ class HomeScreen extends React.Component {
           <View>
             <Text style = {{fontSize: 20}}>Welcome to the mind-bending game of Ghalat where the wrong answer is the right one. It is refreshing for the mind to try activities like these and I encourage everyone to play it for a while.</Text>
             <Button
-              style={allStyles.ButtonStyle}
-              title="Go to Game"
-              onPress={
-              () => this.props.navigation.navigate('Game')
-              }
-            />
-            <Text>This button leads to questions.</Text>
-            <Button
-              title= "Go to Question"
+              title= "Begin Game"
               onPress = {
               () => this.props.navigation.navigate('Question')
-              }
-            />
-            <Text>This button leads to Results.</Text>
-            <Button
-              style = {allStyles.ButtonStyle}
-              title= "Go to Results"
-              onPress = {
-              () => this.props.navigation.navigate('Results')
               }
             />
           </View>
@@ -61,9 +44,6 @@ class HomeScreen extends React.Component {
 const MyAppNavigator = createStackNavigator({
   Home: {
     screen: HomeScreen,
-  },
-  Game: {
-    screen: GameScreen,
   },
   Question: {
     screen: QuestionScreen,

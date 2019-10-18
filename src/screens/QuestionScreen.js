@@ -1,6 +1,6 @@
 // Import statements
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Button, Text, TouchableOpacity } from 'react-native';
 // Importing components
 import Question from '../components/Question';
 import Option from '../components/Option';
@@ -16,7 +16,7 @@ class QuestionScreen extends React.Component {
     render () {
         return (
             <View style = {[allStyles.HomeScreen, allStyles.MainContainer]}>
-                <Question questionNumber="Question #02" questionText= "Which of the following is an animal?"/>
+                <Question questionNumber="Question #01" questionText= "Which of the following is an animal?"/>
                     <View style={allStyles.TopOptionBar}>
                         <Option optionText="Cheetah" answerType={incorrectAnswer} />
                         <Option optionText = "Blue Pinch that goes for the ultimate kill" answerType = {correctAnswer} />
@@ -25,6 +25,10 @@ class QuestionScreen extends React.Component {
                         <Option optionText = "Human Kid" answerType = {correctAnswer} />
                         <Option optionText = "Elephant" answerType = {correctAnswer} />
                     </View>
+                <Button
+                    title = "Show Result"
+                    onPress = {() => this.props.navigation.navigate('Results')}
+                />
             </View>
         )
     }
